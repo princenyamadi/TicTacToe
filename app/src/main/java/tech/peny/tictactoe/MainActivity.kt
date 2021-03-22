@@ -46,13 +46,17 @@ class MainActivity : AppCompatActivity() {
 
     fun playGame(cellId:Int,btnSelected:Button){
         if(activePlayer == 1){
+            Log.d("btnaction","setting text")
             btnSelected.text = "X"
+            Log.d("btnaction","setting color")
             btnSelected.setBackgroundResource(R.color.blue)
             player1.add(cellId)
+            activePlayer = 2
         }else{
             btnSelected.text="0"
             btnSelected.setBackgroundResource(R.color.darkGreen)
             player2.add(cellId)
+            activePlayer = 1
         }
         btnSelected.isEnabled = false;
         checkWinner()
